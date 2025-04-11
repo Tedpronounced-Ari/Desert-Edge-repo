@@ -14,17 +14,51 @@
             const box = document.createElement("div");
             box.style.width = "50px";
             box.style.height = "50px";
-            box.style.backgroundColor = "red";
-            box.style.position = "absolute";
+            box.style.backgroundColor = "pink";
+            box.style.position = "relative";
             box.style.left = "0px";
             document.body.appendChild(box);
+           
+           
+            const rect = document.createElement("div")
+            rect.style.width = "50px"
+            rect.style.height = "100px"
+            rect.style.backgroundColor = "purple"
+            rect.style.position = "relative"
+            rect.style.left = "20px"
+            document.body.appendChild(rect)
             
-            let position = 0;
+            let positionX = 0;
+            let positionY = 0;
             
             document.addEventListener("keydown", (event) => {
                 if (event.key === "d") {
-                    position -= 5;
-                    box.style.left = position + "px";
+                    positionX += 5;
+                    box.style.left = positionX + "px";
+                }
+            });
+
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "a") {
+                    positionX -= 5;
+                    box.style.left = positionX + "px";
+                }
+            });
+
+           
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "w") {
+                    positionY += 5;
+                    box.style.bottom = positionY + "px";
+                }
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "s") {
+                    positionY -= 5;
+                    box.style.bottom = positionY + "px";
                 }
             });
         });
